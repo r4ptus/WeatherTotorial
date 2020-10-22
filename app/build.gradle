@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.raptus.weathertotorial"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -36,12 +36,8 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
-    //room
-    implementation "androidx.room:room-runtime:$room_version"
-    implementation "androidx.legacy:legacy-support-v4:1.0.0"
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
-    kapt "androidx.room:room-compiler:$room_version"
+    //PaperDB
+    implementation 'io.paperdb:paperdb:2.7.1'
 
     implementation "com.google.code.gson:gson:2.8.5"
 
@@ -67,7 +63,7 @@ dependencies {
     implementation "com.xwray:groupie:2.1.0"
     implementation "com.xwray:groupie-kotlin-android-extensions:2.1.0"
 
-    implementation "androidx.preference:preference:1.1.1"
+    implementation "androidx.preference:preference-ktx:1.1.1"
 
     implementation "com.google.android.gms:play-services-location:17.1.0"
 

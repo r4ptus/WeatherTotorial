@@ -4,7 +4,6 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 
-
 android {
     compileSdkVersion 29
 
@@ -14,8 +13,8 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -25,6 +24,7 @@ android {
         }
     }
 }
+
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])

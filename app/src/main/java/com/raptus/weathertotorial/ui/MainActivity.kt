@@ -7,6 +7,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.raptus.weathertotorial.R
+import io.paperdb.Paper
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         NavigationUI.setupActionBarWithNavController(this,navController);
 
+        Paper.init(this)
     }
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp()

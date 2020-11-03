@@ -1,6 +1,5 @@
 package com.raptus.weathertotorial.ui.weather.future.list
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater

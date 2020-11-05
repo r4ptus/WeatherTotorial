@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.raptus.weathertotorial.data.network.WeatherNetworkDataSource
 import com.raptus.weathertotorial.data.network.response.CurrentWeatherResponse
+import com.raptus.weathertotorial.data.provider.LocationProvider
 import io.paperdb.Paper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -14,6 +15,7 @@ import org.threeten.bp.ZonedDateTime
 
 class ForecastRepositoryImpl(
     private val weatherNetworkDataSource: WeatherNetworkDataSource,
+    private val locationProvider: LocationProvider
 ) : ForecastRepository {
 
     init {
@@ -43,7 +45,7 @@ class ForecastRepositoryImpl(
     }
     private suspend fun fetchCurrentWeather(){
         weatherNetworkDataSource.fetchCurrentWeather(
-            "Alzey"
+            locationProvider.getPreferredLocationString()
         )
     }
     private fun isFetchCurrentNeeded(lastFetchedTime: org.threeten.bp.ZonedDateTime) : Boolean{

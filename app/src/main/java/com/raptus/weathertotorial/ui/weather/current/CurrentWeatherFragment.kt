@@ -61,6 +61,7 @@ class CurrentWeatherFragment : ScopedFragment(),KodeinAware {
             updateCondition(it.weather[0].description)
             updateWind(it.wind.speed)
             updateVisibility(it.visibility)
+            updateHumidity(it.main.humidity)
 
             GlideApp.with(this@CurrentWeatherFragment)
                 .load("https://openweathermap.org/img/wn/${it.weather[0].icon}@2x.png")
@@ -82,6 +83,9 @@ class CurrentWeatherFragment : ScopedFragment(),KodeinAware {
     }
     private fun updateCondition(condition: String){
         textView_condition.text = condition
+    }
+    private fun updateHumidity(humidity: Int){
+        textView_precipitation.text = "Humidity: $humidity%"
     }
     private fun updateWind(speed: Double){
         textView_wind.text = "Wind: $speed m/s"
